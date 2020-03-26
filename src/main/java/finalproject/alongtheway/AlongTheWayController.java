@@ -8,6 +8,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +36,9 @@ public class AlongTheWayController {
 
 	@Autowired
 	private BusinessSearchApiService businessSearchService;
+	
+	@Value("${google.api_key}")
+	private String apiKey;
 
 	@RequestMapping("/")
 	public ModelAndView index(HttpSession session) {
@@ -321,6 +325,7 @@ public class AlongTheWayController {
 
 		mav.addObject("loc1", parseLoc1[0] + "+" + parseLoc1[1]);
 		mav.addObject("loc2", parseLoc2[0] + "+" + parseLoc2[1]);
+		mav.addObject("apiKey",apiKey);
 
 		return mav;
 

@@ -33,7 +33,7 @@ public class BusinessSearchApiService {
 		restTemplateWithUserAgent = new RestTemplateBuilder().additionalInterceptors(interceptor).build();
 	}
 
-	@Value("${yelpapi.key}")
+	@Value("${yelp.api_key}")
 	private String yelpkey;
 
 	// get all results by any location string, quite robust for what it accepts

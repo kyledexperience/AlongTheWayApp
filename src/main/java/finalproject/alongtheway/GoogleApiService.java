@@ -16,7 +16,7 @@ public class GoogleApiService {
 
 	private RestTemplate restTemplate = new RestTemplate();
 
-	@Value("${googleapi.key}")
+	@Value("${google.api_key}")
 	private String googlekey;
 
 	// get WAYPOINTS
